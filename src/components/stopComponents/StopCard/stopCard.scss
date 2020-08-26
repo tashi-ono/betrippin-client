@@ -1,0 +1,91 @@
+@import "../../../_config.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Zetta&display=swap");
+
+.stop-card {
+  // background-color: $textBox-color;
+  background-color: rgb(252, 214, 1);
+  border-radius: 30px;
+  padding: 1em;
+  margin: 1em auto;
+  box-shadow: 0 30px 50px rgba(0, 0, 0, 0.8);
+  width: 80%;
+
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  grid-template-rows: min-content 1fr min-content;
+  grid-template-areas:
+    "remove title reorder-up"
+    "   .   to-do     .     "
+    "   .   to-do reorder-down";
+
+  .things-to-do {
+    grid-area: to-do;
+    font-family: "Lexend Zetta", sans-serif;
+    letter-spacing: -0.1em;
+    ul {
+      display: flex;
+      flex-direction: column;
+      margin: 15px auto;
+      padding: 0;
+      line-height: 30px;
+    }
+  }
+
+  .remove-stop {
+    grid-area: remove;
+  }
+
+  .stop-name {
+    grid-area: title;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: "Lexend Zetta", sans-serif;
+    color: black;
+  }
+  .reorder-up {
+    grid-area: reorder-up;
+  }
+  .reorder-down {
+    grid-area: reorder-down;
+  }
+
+  .remove-stop,
+  .reorder-up,
+  .reorder-down {
+    cursor: pointer;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+    font-weight: 700;
+    height: 40px;
+    color: white;
+    &:hover {
+      background-color: rgba(74, 218, 253, 0.6);
+    }
+  }
+}
+
+.list-item {
+  padding: 5px;
+}
+
+.remove-item {
+  cursor: pointer;
+  background-color: rgb(207, 250, 139);
+  padding: 1px 5px 2px 5px;
+  margin-left: 5px;
+  border-radius: 50%;
+  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 500;
+
+  &:hover {
+    background-color: rgba(74, 218, 253, 0.6);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .stop-card {
+    min-height: auto;
+  }
+}
